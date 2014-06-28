@@ -11,9 +11,8 @@
     <div class="bottom fit" horizontal="" center-justified="" end="" layout="">
 
         <paper-tabs selected="0" flex="" style="max-width: 600px;">
-            <paper-tab class="">BLOG</paper-tab>
-            <paper-tab class="">ABOUT ME</paper-tab>
-            <paper-tab class="core-selected" active="">C.V</paper-tab>
+            <paper-tab data-ng-repeat="tab in tabs"
+                       class="{{$index == 0 ? 'core-selected' : ''}}" {{$index == 0 ? 'active' : ''}} data-ng-click="goTo(tab.href)">{{tab.title}}</paper-tab>
         </paper-tabs>
     </div>
 </core-toolbar>
