@@ -1,0 +1,30 @@
+{
+  "name": "Androguide",
+  "version": "0.0.0",
+  "authors": [
+    "Louis Teboul (Androguide) <admin@androguide.fr>"
+  ],
+  "description": "My Website",
+  "main": "app/index.html",
+  "license": "Apache v2",
+  "homepage": "http://androguide.fr",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.18",
+    "angular-route": "~1.2.18",
+    "bootstrap": "~3.2.0",
+    "polymer": "Polymer/polymer#~0.3.3",
+    "core-elements": "Polymer/core-elements#~0.3.3",
+    "core-toolbar": "Polymer/core-toolbar#~0.3.3",
+    "core-icons": "Polymer/core-icons#~0.3.3",
+    "paper-elements": "Polymer/paper-elements#~0.3.3"
+  }
+}
