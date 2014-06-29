@@ -9,15 +9,15 @@ angular.module('Androguide').controller('headerCtrl', ['$scope', '$location', fu
             href: "blog"
         },
         {
-            title: "ABOUT ME",
+            title: "PROJECTS",
             href: "about"
         },
         {
-            title: "C.V",
+            title: "ABOUT ME",
             href: "cv"
         }
 
-    ]
+    ];
 
     $scope.switch = function(pos) {
         var p = document.querySelector('core-animated-pages');

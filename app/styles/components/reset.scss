@@ -1,7 +1,20 @@
 body {
-  background: #343434;
+  background: $cloud;
   padding-top: 128px;
-  color: #fff;
+  color: #333;
   font-family: $roboto;
   overflow-x: hidden;
+}
+
+#up-page {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+  background-color: $teal;
+
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }

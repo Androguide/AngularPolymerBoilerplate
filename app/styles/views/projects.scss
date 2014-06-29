@@ -1,15 +1,11 @@
-#about-header {
+#projects-header {
   padding: 9% 0 5.5%;
-
-  h1 {
-    margin-bottom: 63px;
-  }
 
   @media screen and (max-width: 620px) {
     padding: 12.5% 0 5.5%;
   }
 
   @media screen and (min-width: 1200px) {
-    padding: 4% 0 5.5%;
+    padding: 4% 0 3%;
   }
 }

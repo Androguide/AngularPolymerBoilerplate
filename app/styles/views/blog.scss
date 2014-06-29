@@ -1,0 +1,116 @@
+#blog-header, #projects-header {
+  h1 {
+    font-size: 3em;
+  }
+
+  paper-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    &::shadow {
+      input {
+        color: #fff;
+      }
+
+      #label {
+        color: #fff;
+      }
+
+      #floatedLabel {
+        color: #fff;
+      }
+
+      #underline {
+        background: $cloud;
+        border-bottom-color: $cloud;
+      }
+
+      #underlineHighlight.focusedColor, #caretInner.focusedColor {
+        color: #fff;
+        background: #fff;
+      }
+    }
+  }
+}
+
+#blog-header {
+  padding: 9% 0 5%;
+}
+
+.blog-content {
+  margin-top: -40px;
+}
+
+.article-card {
+  margin-bottom: 25px;
+  .card-thumb {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .card-bottom {
+    padding: 20px 20px 15px;
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  #blog-header {
+    padding: 12.5% 0 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-content {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #blog-header {
+    padding: 4% 0 5.5%;
+  }
+
+  .blog-content {
+    margin-top: -60px;
+  }
+}
+
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  position: relative;
+  display: block;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-enter {
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -o-transform: scaleY(0);
+  transform: scaleY(0);
+//  height: 0;
+  width: 0;
+  opacity: 0.5;
+}
+
+.animate-repeat.ng-enter.ng-enter-active,
+.animate-repeat.ng-leave {
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
+  transform: scaleY(1);
+//  height: 284px;
+  width: 263px;
+  opacity: 1;
+}
