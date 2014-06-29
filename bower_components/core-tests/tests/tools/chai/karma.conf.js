@@ -1,6 +1,6 @@
 module.exports = function(config) {
   config.set({
-      basePath: ')
+      basePath: ''
     , frameworks: [ 'mocha' ]
     , files: [
           'build/build.js'
@@ -20,7 +20,7 @@ module.exports = function(config) {
 
   switch (process.env.CHAI_TEST_ENV) {
     case 'sauce':
-      require('./karma.sauce.js')(config);
+      require('./karma.sauce')(config);
       break;
     default:
       // ...

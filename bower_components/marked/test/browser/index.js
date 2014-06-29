@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var test = require('../index')
+var test = require('../')
   , runTests = test.runTests
   , load = test.load;
 

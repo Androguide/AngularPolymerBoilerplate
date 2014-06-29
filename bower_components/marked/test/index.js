@@ -12,7 +12,7 @@
 
 var fs = require('fs')
   , path = require('path')
-  , marked = require('../lib/marked');
+  , marked = require('../');
 
 /**
  * Load Tests

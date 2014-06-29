@@ -16,7 +16,7 @@ module.exports = function(config) {
   if (process.env.SKIP_SAUCE) return;
 
   var branch = process.env.TRAVIS_BRANCH || 'local'
-  var browserConfig = require('./sauce.browsers.js');
+  var browserConfig = require('./sauce.browsers');
   var browsers = Object.keys(browserConfig);
   var tags = [ 'chaijs_' + version, auth.SAUCE_USERNAME + '@' + branch ];
   var tunnel = process.env.TRAVIS_JOB_NUMBER || ts;
