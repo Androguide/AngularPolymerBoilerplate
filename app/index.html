@@ -20,6 +20,8 @@
     <link rel="import" href="bower_components/paper-button/paper-button.html"/>
     <link rel="import" href="bower_components/paper-fab/paper-fab.html"/>
     <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html"/>
+    <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html"/>
+    <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html"/>
 
     <!-- Bootstrap Core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -33,11 +35,21 @@
     <![endif]-->
 </head>
 
-<body id="page-top" class="index" data-ng-app="Androguide">
+<body id="page-top" class="index" data-ng-app="Androguide" unresolved>
 
 <div data-src="'views/includes/header.html'" data-ng-controller="headerCtrl" data-ng-include></div>
 
-<div data-ng-view></div>
+<core-animated-pages transitions="slide-from-right" data-ng-controller="headerCtrl">
+    <section>
+        <div data-src="'views/blog.html'" data-ng-controller="blogCtrl" data-ng-include></div>
+    </section>
+    <section>
+        <div data-src="'views/about.html'" data-ng-controller="aboutCtrl" data-ng-include></div>
+    </section>
+    <section>
+        <div data-src="'views/cv.html'" data-ng-controller="cvCtrl" data-ng-include></div>
+    </section>
+</core-animated-pages>
 
 <!--Vendor-->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>

@@ -18,4 +18,9 @@ angular.module('Androguide').controller('headerCtrl', ['$scope', '$location', fu
         }
 
     ]
+
+    $scope.switch = function(pos) {
+        var p = document.querySelector('core-animated-pages');
+        p.selected = pos;
+    }
 }]);
