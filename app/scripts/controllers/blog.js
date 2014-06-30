@@ -61,4 +61,14 @@ angular.module('Androguide').controller('blogCtrl', ['$scope', '$timeout', funct
         console.log('search changed');
     }, true);
 
+    $scope.transition = function(pos) {
+        document.querySelector('#blog-pages').selected = pos;
+        var upPage =$('#up-page');
+        upPage.removeClass('back-up').addClass('to-back');
+        upPage.click(function() {
+            upPage.removeClass('to-back').addClass('back-up');
+            document.querySelector('#blog-pages').selected = 0;
+        });
+    }
+
 }]);

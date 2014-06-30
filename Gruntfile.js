@@ -23,8 +23,9 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'app/dist/index.html': 'app/index.html',
-                    'app/views/home.html': 'app/dist/blog.html',
-                    'app/views/includes/header.html': 'app/dist/header.html'
+                    'app/dist/views/blog.html': 'app/views/blog.html',
+                    'app/dist/views/about.html': 'app/views/about.html',
+                    'app/dist/views/projects.html': 'app/views/projects.html'
                 }
             }
         },
@@ -47,7 +48,7 @@ module.exports = function(grunt) {
                 src: [
                     'app/bower_components/jquery/dist/jquery.min.js',
                     'app/bower_components/angular/angular.min.js',
-                    'app/bower_components/angular-route/angular-route.min.js',
+                    'app/bower_components/angular-animate/angular-animate.min.js',
                     'app/bower_components/bootstrap/dist/js/bootstrap.min.js'
                 ],
                 dest: 'app/dist/vendor.combined.js'

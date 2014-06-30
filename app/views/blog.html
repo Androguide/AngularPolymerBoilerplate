@@ -1,22 +1,37 @@
-<div id="blog-header" class="bg-teal">
-    <h1 class="text-center light-font cloud">Blog</h1>
-    <paper-input data-ng-model="searchBlog" label="Search" floatingLabel></paper-input>
-    <paper-shadow z="1"></paper-shadow>
-</div>
+<core-animated-pages id="blog-pages" transitions="hero-transition slide-up slide-down cross-fade list-cascade"
+                     on-core-animated-pages-transition-end="{{complete}}">
+    <section>
+        <div id="blog-header" class="bg-teal">
+            <h1 class="text-center light-font cloud">Blog</h1>
+            <paper-input data-ng-model="searchBlog" label="Search" floatingLabel></paper-input>
+            <paper-shadow z="1"></paper-shadow>
+        </div>
 
-<div class="container blog-content">
-    <div class="row">
-        <div class="col-lg-3 col-sm-6 animate-repeat" data-ng-repeat="article in articles | filter:searchBlog">
-            <div class="article-card" data-ng-animate="'animate'">
-                <div class="card-thumb bg-{{article.color}}">
-                    <img class="img-responsive center-block" data-ng-src="assets/img/RoundIcons-Free-Set-0{{$index + 1}}.png" alt=""/>
+        <div class="container blog-content">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 animate-repeat"
+                     data-ng-repeat="article in articles | filter:searchBlog">
+                    <div class="article-card" data-ng-animate="'animate'" hero hero-id="article{{$index}}" data-ng-click="transition($index + 1)">
+                        <div class="card-thumb bg-{{article.color}}">
+                            <img class="img-responsive center-block"
+                                 data-ng-src="assets/img/RoundIcons-Free-Set-0{{$index + 1}}.png" alt=""/>
+                        </div>
+                        <div class="card-bottom">
+                            <h3 class="light-font {{article.color}}">{{article.title}}</h3>
+
+                            <p>{{article.intro}}</p>
+                        </div>
+                        <paper-shadow z="2"></paper-shadow>
+                    </div>
                 </div>
-                <div class="card-bottom">
-                    <h3 class="light-font {{article.color}}">{{article.title}}</h3>
-                    <p>{{article.intro}}</p>
-                </div>
-                <paper-shadow z="2"></paper-shadow>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <section data-ng-repeat="article in articles">
+        <div style="height: 90vh; padding: 5%; margin-top: -20px;" hero-id="article{{$index}}" hero class="bg-{{article.color}}">
+            <br/><br/>
+            <h1 class="light-font cloud">{{article.title}}</h1>
+            <p class="cloud">{{article.intro}}</p>
+        </div>
+    </section>
+</core-animated-pages>
