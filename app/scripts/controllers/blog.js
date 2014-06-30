@@ -4,7 +4,7 @@ angular.module('Androguide').controller('blogCtrl', ['$scope', '$timeout', funct
     $scope.articles = [
         {
             title: "Polymer+Angular=<3",
-            intro: "Polymer & Angular alongside each other FTW!...",
+            intro: "Polymer & Angular working hand in hand FTW!!!!!!!...",
             color: "belize"
         },
         {
