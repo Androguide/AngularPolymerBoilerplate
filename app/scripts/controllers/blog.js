@@ -1,53 +1,14 @@
-angular.module('Androguide').controller('blogCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+// Blog Controller
+// ---------------
+// The AngularJS controller responsible for handling the blog view _(see views/blog.html)_
+angular.module('Androguide').controller('blogCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
     $scope.search = "";
 
-    $scope.articles = [
-        {
-            title: "Polymer+Angular=<3",
-            intro: "Polymer & Angular working hand in hand FTW!!!!!!!...",
-            color: "belize"
-        },
-        {
-            title: "Article 2",
-            intro: "Bla blah bla bla, gibberish giberrish, adzooks, nonsense...",
-            color: "alizarin"
-        },
-        {
-            title: "Article 3",
-            intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit...",
-            color: "sunflower"
-        },
-        {
-            title: "Article 4",
-            intro: "Modi numquam odio perspiciatis quia, sit voluptatem...",
-            color: "asphalt"
-        },
-        {
-            title: "Article 5",
-            intro: "Aliquam beatae cumque ea earum fuga, illo ipsam quae...",
-            color: "amethyst"
-        },
-        {
-            title: "Article 6",
-            intro: "illo ipsam quae quo rem repellendus sunt ut voluptates...",
-            color: "teal"
-        },
-        {
-            title: "Article 7",
-            intro: "This is complete nonsense gibberish, don't click this...",
-            color: "belize"
-        },
-        {
-            title: "Article 8",
-            intro: "Plz halp friend, my fingerz are typing random wordz!!!...",
-            color: "nephrytis"
-        },
-        {
-            title: "Article 9",
-            intro: "Youplaboum, un peu de français dans l'truc quand même!..",
-            color: "sunflower"
-        }
-    ];
+    // Get the blog posts from a json file
+    // TODO:move this to a MongoDB and create an admin panel
+    $http.get('assets/data/blog.json').success(function(data) {
+        $scope.articles = data;
+    });
 
     $timeout(function () {
         var searchBox = $('#blog-search');
@@ -57,10 +18,8 @@ angular.module('Androguide').controller('blogCtrl', ['$scope', '$timeout', funct
         });
     }, 1000);
 
-    $scope.$watch('search', function() {
-        console.log('search changed');
-    }, true);
-
+    // Handle blog post transition between list and details
+    // using Polymer's `<core-animated-pages>` element
     $scope.transition = function(pos) {
         document.querySelector('#blog-pages').selected = pos;
         var upPage =$('#up-page');

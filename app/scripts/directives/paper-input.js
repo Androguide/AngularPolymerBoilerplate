@@ -1,5 +1,9 @@
 'use strict';
 
+// Paper Input Directive
+// ---------------------
+// The AngularJS directive allowing to bind to Polymer's `<paper-input>` elements
+// with Angular like they were standard HTML5 `<input>` elements, using the `ng-model` attribute
 angular.module('Androguide').directive('paperInput', ['$parse', '$timeout', '$browser', function ($parse, $timeout, $browser) {
     
     return {
