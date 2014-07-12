@@ -5,7 +5,7 @@ angular.module('Androguide').controller('headerCtrl', ['$scope', '$location', fu
 
     // Define the tabs titles
     // TODO: move this to a config.json file
-    $scope.tabs = ["BLOG", "PROJECTS", "ABOUT ME"];
+    $scope.tabs = ["BLOG", "PORTFOLIO", "ABOUT ME"];
 
     // Simple method to switch between the main pages through the tabs
     // with transitions using Polymer's `<core-animated-pages>` element

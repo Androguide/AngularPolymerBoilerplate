@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="../bower_components/highlightjs/styles/tomorrow-night-eighties.css">
+<script src="../bower_components/highlightjs/highlight.pack.js"></script>
+
+<polymer-element name="inline-code-snippet" attributes="tabreplace">
+    <template>
+        <code>
+            <content></content>
+        </code>
+    </template>
+    <script>
+        Polymer('inline-code-snippet', {
+            tabreplace: '  ',
+            enteredView: function () {
+                this.innerHTML_ = this.innerHTML;
+
+                hljs.configure({ tabReplace: this.tabreplace });
+                hljs.highlightBlock(this);
+            },
+            tabreplaceChanged: function (oldValue, newValue) {
+                this.tabreplace = newValue;
+                this.innerHTML = this.innerHTML_;
+
+                hljs.configure({ tabReplace: this.tabreplace });
+                hljs.highlightBlock(this);
+            }
+        });
+    </script>
+</polymer-element>
