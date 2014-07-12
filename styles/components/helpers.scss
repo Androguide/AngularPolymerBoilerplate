@@ -1,0 +1,22 @@
+// Typography
+.light-font {
+  font-weight: 200;
+}
+
+.heavy-font {
+  font-weight: 500;
+}
+
+// Colors
+@each $color, $name in $colors {
+  .#{$name} {
+    color: $color !important;
+  }
+}
+
+@each $color, $name in $colors {
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+

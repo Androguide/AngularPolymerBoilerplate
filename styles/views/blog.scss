@@ -1,0 +1,119 @@
+#blog-header, #projects-header {
+  h1 {
+    font-size: 3em;
+  }
+
+  paper-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    &::shadow {
+      input {
+        color: #fff;
+      }
+
+      #label {
+        color: #fff;
+      }
+
+      #floatedLabel {
+        color: #fff;
+      }
+
+      #underline {
+        background: $cloud;
+        border-bottom-color: $cloud;
+      }
+
+      #underlineHighlight.focusedColor, #caretInner.focusedColor {
+        color: #fff;
+        background: #fff;
+      }
+    }
+  }
+}
+
+.page-panel {
+  height: 90vh;
+  padding: 5%;
+  margin-top: -20px;
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .article-title {
+    padding-left: 0;
+  }
+
+  .social-col {
+    padding-top: 10px;
+
+    &.twitter {
+      padding-top: 12px;
+    }
+  }
+}
+
+#blog-header {
+  padding: 9% 0 5%;
+}
+
+.blog-content, .projects-content {
+  margin-top: -40px;
+}
+
+.article-card {
+  margin-bottom: 25px;
+  .card-thumb {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .card-bottom {
+    padding: 20px 20px 15px;
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  #blog-header {
+    padding: 12.5% 0 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-content {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #blog-header {
+    padding: 4% 0 5.5%;
+  }
+
+  .blog-content {
+    margin-top: -60px;
+  }
+}
+
+.blog-article {
+  color: $cloud;
+
+  a {
+    color: $emerald;
+
+    &:hover {
+      text-decoration: none;
+      text-shadow: 1px 1px 1px $teal;
+    }
+
+  }
+}
+

@@ -4,13 +4,12 @@
         <h3><span class="heavy-font">Louis</span>
             <span class="light-font"> Teboul</span></h3>
     </div>
-    <paper-icon-button icon="search" role="button" tabindex="0" data-ng-click="revealInput()"></paper-icon-button>
     <paper-icon-button icon="more-vert" role="button" tabindex="0"></paper-icon-button>
     <div class="bottom fit" horizontal="" center-justified="" end="" layout="">
 
         <paper-tabs selected="0" flex="" style="max-width: 600px;">
             <paper-tab data-ng-repeat="tab in tabs"
-                       class="{{$index == 0 ? 'core-selected' : ''}}" {{$index == 0 ? 'active' : ''}} data-ng-click="switch($index)">{{tab.title}}</paper-tab>
+                       class="{{$index == 0 ? 'core-selected' : ''}}" {{$index == 0 ? 'active' : ''}} data-ng-click="switch($index)">{{tab}}</paper-tab>
         </paper-tabs>
     </div>
 </core-toolbar>

@@ -1,0 +1,115 @@
+<!--
+Element providing solution to no problem in particular.
+
+##### Example
+
+    <github-card></github-card>
+
+@element github-card
+@blurb Element providing solution to no problem in particular.
+@status alpha
+@homepage http://ds82.github.io/github-card
+-->
+<polymer-element name="github-card" attributes="user">
+
+  <template>
+
+    <link rel="stylesheet" href="github-card.css" />
+
+    <content>
+      <article id="element" class="user spinner">
+        <dl class="github">
+          <dt>github</dt>
+          <dd><a href="https://github.com/"></a></dd>
+        </dl>
+        <dl class="user-data">
+
+          <dt>Avatar:</dt>
+          <dd class="user-avatar">
+            <a href="https://github.com/{{github.login}}"><img src="{{github.avatar_url}}" /></a>
+          </dd>
+
+          <dt>Fullname:</dt>
+          <dd class="user-name">{{github.name}}</dd>
+
+          <dt>Account:</dt>
+          <dd class="user-account"><a href="https://github.com/{{github.login}}">{{github.login}}</a></dd>
+        </dl>
+        <dl class="user-stats">
+          <dt>Repos</dt>
+          <dd class="user-repos" data-stats="repos">
+            <a href="https://github.com/{{github.login}}?tab=repositories">{{github.public_repos}}</a>
+          </dd>
+
+          <dt>Followers</dt>
+          <dd class="user-followers" data-stats="followers">
+            <a href="https://github.com/{{github.login}}/followers">{{github.followers}}</a>
+          </dd>
+        </dl>
+      <article>
+    </content>
+
+  </template>
+
+  <script>
+
+    (function() {
+    Polymer('github-card', {
+      /**
+       * github userid
+       *
+       * @attribute user
+       * @type string
+       */
+      user: '',
+
+      ready: function() {
+        this.github = {};
+        this.xhr = document.createElement('polymer-xhr');
+        this.load = load.bind( this );
+     },
+
+      userChanged: function() {
+        this.reload();
+      },
+
+      callbackXHR: function( err, data ) {
+        this.github = data;
+        this.$.element.className = this.$.element.className.replace(/spinner/, ''); 
+      },
+
+      /**
+       * Realoads user data from github.
+       *
+       * @method reload
+       * @return {Object} Returns undefined.
+       */
+      reload: function() {
+        this.load( this.xhr, this.user, this.callbackXHR.bind( this ));
+      }
+
+    });
+
+    var githubUrl = 'https://api.github.com/users/';
+
+    function load( xhr, user, cb ) {
+      xhr.request({
+        method: 'GET',
+        url:    githubUrl + user,
+        callback: function( raw ) {
+          try {
+            var obj = JSON.parse( raw );
+            cb( null, obj );
+
+          } catch( err ) {
+            console.log( 'error while parsing json', arguments );
+            cb( arguments, null );
+          }
+        }
+      });
+    }
+
+    })();
+  </script>
+
+</polymer-element>

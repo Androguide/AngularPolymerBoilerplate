@@ -1,1 +1,48 @@
-<div id="blog-header" class="bg-teal"><h1 class="text-center light-font cloud">Blog</h1><paper-input data-ng-model="searchBlog" label="Search" floatinglabel></paper-input><paper-shadow z="1"></paper-shadow></div><div class="container blog-content"><div class="row"><div class="col-lg-3 col-sm-6 animate-repeat" data-ng-repeat="article in articles | filter:searchBlog"><div class="article-card" data-ng-animate="'animate'"><div class="card-thumb bg-{{article.color}}"><img class="img-responsive center-block" data-ng-src="assets/img/RoundIcons-Free-Set-0{{$index + 1}}.png" alt=""></div><div class="card-bottom"><h3 class="light-font {{article.color}}">{{article.title}}</h3><p>{{article.intro}}</p></div><paper-shadow z="2"></paper-shadow></div></div></div></div>
+<core-animated-pages id="blog-pages" transitions="hero-transition slide-up slide-down cross-fade list-cascade"
+                     on-core-animated-pages-transition-end="{{complete}}">
+    <section>
+        <div id="blog-header" class="bg-teal">
+            <h1 class="text-center light-font cloud">Blog</h1>
+            <paper-input data-ng-model="searchBlog" label="Search" floatingLabel></paper-input>
+            <paper-shadow z="1"></paper-shadow>
+        </div>
+
+        <div class="container blog-content">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 animate-repeat"
+                     data-ng-repeat="article in articles | filter:searchBlog">
+                    <div class="article-card" data-ng-animate="'animate'" hero hero-id="project{{$index}}" data-ng-click="transition($index + 1)">
+                        <div class="card-thumb bg-{{article.color}}">
+                            <img class="img-responsive center-block"
+                                 data-ng-src="assets/img/RoundIcons-Free-Set-0{{$index + 1}}.png" alt=""/>
+                        </div>
+                        <div class="card-bottom">
+                            <h3 class="light-font {{article.color}}">{{article.title}}</h3>
+
+                            <p>{{article.intro}}</p>
+                        </div>
+                        <paper-shadow z="2"></paper-shadow>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section data-ng-repeat="article in articles">
+        <div hero hero-id="project{{$index}}" class="page-panel bg-{{article.color}}">
+            <br/><br/>
+            <div class="row-fluid clearfix">
+                <div class="col-sm-5 article-title">
+                    <h1 class="light-font cloud">{{article.title}}</h1>
+                </div>
+                <div class="col-sm-1 social-col">
+                    <gplus-one annotation="bubble" href="http://androguide.fr/#/{{article.permalink}}"></gplus-one>
+                </div>
+                <div class="col-sm-1 social-col twitter">
+                    <twitter-button type="share" href="http://androguide.fr/#/{{article.permalink}}" user="AndroguideFr" hashtag="{{article.hashtag}}" text="{{article.intro}}"></twitter-button>
+                </div>
+            </div>
+
+            <div data-ng-include data-src="'views/articles/' + article.template_uri"></div>
+        </div>
+    </section>
+</core-animated-pages>

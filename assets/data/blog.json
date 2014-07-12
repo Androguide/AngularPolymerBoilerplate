@@ -1,0 +1,75 @@
+[
+    {
+        "title": "Polymer + Angular",
+        "intro": "How to use Polymer for AngularJS routing & page transitions",
+        "color": "belize",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    },
+    {
+        "title": "Article 2",
+        "intro": "Bla blah bla bla, gibberish giberrish, adzooks, nonsense...",
+        "color": "alizarin",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+
+    },
+    {
+        "title": "Article 3",
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipisicing elit...",
+        "color": "sunflower",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    },
+    {
+        "title": "Article 4",
+        "intro": "Modi numquam odio perspiciatis quia, sit voluptatem...",
+        "color": "asphalt",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    },
+    {
+        "title": "Article 5",
+        "intro": "Aliquam beatae cumque ea earum fuga, illo ipsam quae...",
+        "color": "amethyst",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    },
+    {
+        "title": "Article 6",
+        "intro": "illo ipsam quae quo rem repellendus sunt ut voluptates...",
+        "color": "teal",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    },
+    {
+        "title": "Article 7",
+        "intro": "This is complete nonsense gibberish, don't click this...",
+        "color": "belize",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    },
+    {
+        "title": "Article 8",
+        "intro": "Plz halp friend, my fingerz are typing random wordz!!!...",
+        "color": "nephrytis",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    },
+    {
+        "title": "Article 9",
+        "intro": "Youplaboum, un peu de français dans l'truc quand même!..",
+        "color": "sunflower",
+        "template_uri": "polymer-angular-routing.html",
+        "permalink": "polymer-angular-routing",
+        "hashtag": "#polymer #angularjs"
+    }
+]
